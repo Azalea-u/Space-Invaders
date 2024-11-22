@@ -8,15 +8,10 @@
 </head>
 <body>
     <div id="scoreboard">
-        <span id="timer">Time: 0s</span> | 
-        <span id="score">Score: 0</span> | 
-        <span id="lives">Lives: 3</span>
+        <div id="timer">Time: 0s</div>
     </div>
     <div id="game-container"></div>
-    <div id="pause-menu" style="display: none;">
-        <button onclick="togglePause()">Continue</button>
-        <button onclick="restartGame()">Restart</button>
-    </div>
-    <script src="game.js"></script>
+    <div id="pause-menu" style="display: none;">Paused</div>
+    <script type="module" src="script/game.js"></script>
 </body>
 </html>
