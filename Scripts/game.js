@@ -1,4 +1,5 @@
 import { renderGame, playerPosition, playerShooting } from "./player.js";
+import { spawnWave } from "./waves.js";
 
 // Cache DOM selectors
 const gameContainer = document.getElementById("game-container");
@@ -39,12 +40,21 @@ function gameloop(timestamp) {
             playerPosition(Key_Input);
             if (Key_Input[" "] || Key_Input["Space"]) playerShooting();
             renderGame();
+
+            if (shouldSpawnNextWave()) {
+                spawnWave();
+            }
         }
     }
 
     if (game_Running) {
         requestAnimationFrame(gameloop);
     }
+}
+
+function shouldSpawnNextWave() {
+    const enemiesRemaining = document.querySelectorAll(".enemy").length;
+    return enemiesRemaining === 0;
 }
 
 gameloop();

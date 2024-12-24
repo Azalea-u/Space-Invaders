@@ -110,3 +110,8 @@ body {
     height: 12px;
     background: #fff;
 }
+
+/* Enemy */
+.enemy {
+    position: absolute;
+}
